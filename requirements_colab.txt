@@ -1,0 +1,2 @@
+tf-nightly==2.2.0-dev20200311
+transformers >= 2.5.1
