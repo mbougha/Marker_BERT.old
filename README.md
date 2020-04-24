@@ -9,7 +9,7 @@
 7. Don't forget to give the TPU the access permission to yout bucket, run it for the first time and you'll get an exception that contains the TPU name ==> go to your GCS page and add the TPU name in the permissions like explained [here](https://cloud.google.com/storage/docs/access-control/using-iam-permissions).
 
 # Collection Cord-19 example
-1. Use the cord-19.ipynb to extract data from the anserini Index, execute up to the section `` Create Run document level from passage level``  ==> get some files 
+1. Use the COVIDEX_1.ipynb to extract data from the anserini Index, execute up to the section `` Create Run document level from passage level``  ==> get some files 
     a) topics_rnd1.tsv: containing the queries
     b) COVID_run.tsv : the run
     c) CORD19_run_1_docs.tsv: the documents text file
@@ -56,4 +56,7 @@ srun singularity exec /logiciels/containerCollections/CUDA10/tf2-NGC-19-11-py3.s
 
 ```
 
-4. Now u have the dataset_*.tf file that u can use in a colab with bert. Use the updated colab file ```doc_inference.ipynb```
+4. Now u have the dataset_*.tf file that u can use in a colab with bert. Use the updated colab file ```Marked_BERT.ipynb```. I don't know if you changed something in your version, if so repport them in this version too: I added a new paramter strategy, I changed the imports , And in the main I left a comment # modified section .
+
+
+# If you use another corpus, you need to see the data processors understand how it works, I gave you all the converters and markers for all datasets I used : for robust04 it is similar to cord19 but for trec the files needed for convert_*.py are different read the parameters. I can't explain all of them but if you read the convert dataset methods in each processor u can understand the format of each file.  
